@@ -1,0 +1,13 @@
+download_images
+
+Simple program to download how many images from unsplash.com as you want. You provide the options and the keywords, the program connects to unsplash.com and download the images. Pure and simple.
+
+Usage: image-download.py [OPTIONS] Keywords
+  -h, --help        Show this help
+  -d, --destination Folder to save the files (Default current dir)
+  -t, --threads     Number of concurrent downloads (Default ThreadPoolExecutor default)
+  -n, --number      Number of images to download (Default 20)
+
+Example:
+python image-download.py -d ~/Pictures -t5 -n10 planets
+Will download 10 images related to the keyword planets using 5 consecutive threads at a time.
