@@ -1,5 +1,8 @@
 import praw
 import requests
+# if it does not download 
+# pip install --upgrade pip
+# pip install opencv-python
 import cv2
 import numpy as np
 import os
@@ -48,7 +51,7 @@ for line in f_final:
 
     print(f"Starting {sub}!")
     count = 0
-    for submission in subreddit.new(limit=POST_SEARCH_AMOUNT):
+    for submission in subreddit.top(limit=POST_SEARCH_AMOUNT): # the new we can change for different tags
         if "jpg" in submission.url.lower() or "png" in submission.url.lower():
             try:
                 resp = requests.get(submission.url.lower(), stream=True).raw
